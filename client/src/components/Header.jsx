@@ -9,3 +9,5 @@ const Header = React.createClass({
     );
   }
 })
+
+module.exports = Header;

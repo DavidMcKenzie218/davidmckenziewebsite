@@ -1,11 +1,13 @@
 const React = require('react');
 
-const Body = react.createClass({
+const Body = React.createClass({
   render: function(){
     return(
       <div>
-        <p>Body of the Webpage</p>
+        <p>Body</p>
       </div>
     );
   }
 })
+
+module.exports = Body;

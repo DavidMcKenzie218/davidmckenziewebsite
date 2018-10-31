@@ -19756,29 +19756,79 @@
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
 
-	//I am using the ES6 class declaration as I have never used this before and I am taking the opertunity
-	//to learn how to use ES6 and React together.
+	var Header = __webpack_require__(160);
+	var Body = __webpack_require__(161);
+
 	var HomePage = React.createClass({
-	  displayName: "HomePage",
+	  displayName: 'HomePage',
 
 	  render: function render() {
 	    return React.createElement(
-	      "div",
-	      { className: "HomePage" },
-	      React.createElement(
-	        "h2",
-	        null,
-	        "Home Page"
-	      )
+	      'div',
+	      { className: 'HomePage' },
+	      React.createElement(Header, null),
+	      React.createElement(Body, null)
 	    );
 	  }
 	});
 
 	module.exports = HomePage;
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Header = React.createClass({
+	  displayName: 'Header',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h2',
+	        null,
+	        'Header'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Header;
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Body = React.createClass({
+	  displayName: 'Body',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'p',
+	        null,
+	        'Body'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Body;
 
 /***/ })
 /******/ ]);
