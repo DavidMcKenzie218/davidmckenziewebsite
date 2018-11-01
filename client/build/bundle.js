@@ -19762,6 +19762,7 @@
 
 	var Header = __webpack_require__(160);
 	var Body = __webpack_require__(161);
+	var HeaderButton = __webpack_require__(162);
 
 	var HomePage = React.createClass({
 	  displayName: 'HomePage',
@@ -19790,18 +19791,15 @@
 
 	var React = __webpack_require__(1);
 
+	var HeaderButton = __webpack_require__(162);
+
 	var Header = React.createClass({
 	  displayName: 'Header',
 
 	  render: function render() {
 
 	    var headers = this.props.data.map(function (header) {
-	      console.log(header);
-	      return React.createElement(
-	        'button',
-	        { key: header.id },
-	        header.title
-	      );
+	      return React.createElement(HeaderButton, { key: header.id, title: header.title });
 	    });
 
 	    return React.createElement(
@@ -19839,6 +19837,34 @@
 	});
 
 	module.exports = Body;
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var headerButton = React.createClass({
+	  displayName: 'headerButton',
+
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'button',
+	        { id: this.props.key },
+	        this.props.title
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = headerButton;
 
 /***/ })
 /******/ ]);

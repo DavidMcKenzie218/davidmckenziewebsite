@@ -2,6 +2,7 @@ const React = require('react');
 
 const Header = require('./Header.jsx');
 const Body = require('./Body.jsx');
+const HeaderButton = require('./HeaderButton.jsx');
 
 const HomePage = React.createClass({
   getInitialState: function(){
