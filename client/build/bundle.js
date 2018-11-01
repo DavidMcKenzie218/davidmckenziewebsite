@@ -19766,11 +19766,15 @@
 	var HomePage = React.createClass({
 	  displayName: 'HomePage',
 
+	  getInitialState: function getInitialState() {
+	    return { headers: [{ id: 1, title: 'Home' }, { id: 2, title: 'Title 1' }, { id: 3, title: 'Title 2' }] };
+	  },
+
 	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      { className: 'HomePage' },
-	      React.createElement(Header, null),
+	      React.createElement(Header, { data: this.state.headers }),
 	      React.createElement(Body, null)
 	    );
 	  }
@@ -19790,14 +19794,20 @@
 	  displayName: 'Header',
 
 	  render: function render() {
+
+	    var headers = this.props.data.map(function (header) {
+	      console.log(header);
+	      return React.createElement(
+	        'button',
+	        { key: header.id },
+	        header.title
+	      );
+	    });
+
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(
-	        'h2',
-	        null,
-	        'Header'
-	      )
+	      headers
 	    );
 	  }
 	});
