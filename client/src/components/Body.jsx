@@ -5,7 +5,9 @@ const Body = React.createClass({
   render: function(){
 
     let paragraphs = this.props.data.map(function(paragraph){
-      return <p>{paragraph.para}</p>
+      return (
+        <p>{paragraph.para}</p>
+      );
     })
 
     return(

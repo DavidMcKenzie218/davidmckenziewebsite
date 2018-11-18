@@ -5,14 +5,19 @@ const Body = require('./Body.jsx');
 const HeaderButton = require('./HeaderButton.jsx');
 
 const HomePage = React.createClass({
-  getInitialState: function(){
-    return {headers: [{id:1, title:'Home'}, {id:2, title:'Title 1'}, {id:3, title:'Title 2'}], body: [{para:"This is paragraph One"}, {para:"This is paragraph Two"}]};
+
+  getInitialState: function(){    return {headers: [{id:1, title:'Home'}, {id:2, title:'Title 1'}, {id:3, title:'Title 2'}], body: [{para:"This is paragraph One"}, {para:"This is paragraph Two"}]};
+  },
+
+  setBodyText: function(buttonId){
+    console.log(buttonId);
+    
   },
 
   render: function(){
     return(
       <div className = "HomePage">
-        <Header data={this.state.headers}/>
+        <Header data={this.state.headers} buttonPressed={this.setBodyText}/>
         <Body data={this.state.body}/>
       </div>
     );
