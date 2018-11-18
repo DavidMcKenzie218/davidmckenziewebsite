@@ -10,8 +10,12 @@ const HomePage = React.createClass({
   },
 
   setBodyText: function(buttonId){
-    console.log(buttonId);
-    
+    let sampleText = [{id:1, para:"this is home page"}, {id:1, para:"this is still home page"}, {id:2, para:"this is title 1 page"}, {id:3, para:"this is title 2 page"}];
+    let bodyText = [];
+    sampleText.map((text) => {
+      if(text.id == buttonId) bodyText.push({para:text.para});
+    })
+    this.setState({body:bodyText});
   },
 
   render: function(){
