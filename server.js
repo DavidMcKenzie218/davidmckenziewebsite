@@ -22,7 +22,9 @@ const server = app.listen(3000, function () {
   new TestApi(app);
 
   let query = new DatabaseQuery();
-  query.all();
+  query.all(function(data){
+    console.log(data);
+  });
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
