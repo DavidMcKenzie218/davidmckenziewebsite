@@ -15,6 +15,7 @@ const HomePage = React.createClass({
     request.open("GET", this.props.url);
     request.onload = function(){
       let apiData = JSON.parse(request.responseText);
+      this.websiteData = {headers: apiData[0].headers, body: apiData[0].body};
       this.setState({headers: apiData[0].headers, body: apiData[0].body});
     }.bind(this);
     request.send();
@@ -23,7 +24,7 @@ const HomePage = React.createClass({
 
   setBodyText: function(buttonId){
     let bodyText = [];
-    let data = this.state.body;
+    let data = this.websiteData.body;
     data.map((text) => {
       if(text.id == buttonId) bodyText.push({para:text.para});
     })
@@ -32,7 +33,7 @@ const HomePage = React.createClass({
 
   componentDidMount: function(){
     this.getApiData();
-    
+
   },
 
   render: function(){
