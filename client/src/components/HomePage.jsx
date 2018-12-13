@@ -6,19 +6,37 @@ const HeaderButton = require('./HeaderButton.jsx');
 
 const HomePage = React.createClass({
 
-  getInitialState: function(){    return {headers: [{id:1, title:'Home'}, {id:2, title:'Title 1'}, {id:3, title:'Title 2'}], body: [{para:"This is paragraph One"}, {para:"This is paragraph Two"}]};
+  getInitialState: function(){    return {headers: [{id:0, title: "loading"}], body: [{id:0, para:"Loading"}]};
+  },
+
+  getApiData: function(){
+    console.log("Requesting data from the API");
+    const request = new XMLHttpRequest();
+    request.open("GET", this.props.url);
+    request.onload = function(){
+      let apiData = JSON.parse(request.responseText);
+      this.setState({headers: apiData[0].headers, body: apiData[0].body});
+    }.bind(this);
+    request.send();
+    console.log("API data retrieved");
   },
 
   setBodyText: function(buttonId){
-    let sampleText = [{id:1, para:"this is home page"}, {id:1, para:"this is still home page"}, {id:2, para:"this is title 1 page"}, {id:3, para:"this is title 2 page"}];
     let bodyText = [];
-    sampleText.map((text) => {
+    let data = this.state.body;
+    data.map((text) => {
       if(text.id == buttonId) bodyText.push({para:text.para});
     })
     this.setState({body:bodyText});
   },
 
+  componentDidMount: function(){
+    this.getApiData();
+    
+  },
+
   render: function(){
+
     return(
       <div className = "HomePage">
         <Header data={this.state.headers} buttonPressed={this.setBodyText}/>
