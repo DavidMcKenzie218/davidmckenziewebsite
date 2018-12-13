@@ -1,4 +1,4 @@
-let titleSeeds = {
+let titleSeeds = 
   [{
     id:1,
     title:"Home Page"
@@ -19,4 +19,3 @@ let titleSeeds = {
     id:5,
     title:"About Me"
   }]
-}
