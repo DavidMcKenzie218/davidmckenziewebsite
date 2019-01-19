@@ -4,6 +4,6 @@ const HomePage = require('./components/HomePage.jsx');
 
 window.onload = function(){
   ReactDOM.render(
-    <HomePage/>,
+    <HomePage url="http://localhost:3000/data"/>,
     document.getElementById('website'));
 }
