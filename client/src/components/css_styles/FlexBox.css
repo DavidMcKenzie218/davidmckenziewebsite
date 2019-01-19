@@ -9,8 +9,3 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-.homePage {
-  display: flex;
-  flex-direction: column;
-}

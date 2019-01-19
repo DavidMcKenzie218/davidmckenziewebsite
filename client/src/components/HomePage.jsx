@@ -22,7 +22,7 @@ const HomePage = React.createClass({
 
   render: function(){
     return(
-      <div className = "homePage">
+      <div>
         <Header data={this.state.headers} buttonPressed={this.setBodyText}/>
         <Body data={this.state.body}/>
       </div>

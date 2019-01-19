@@ -1,8 +1,6 @@
 const React = require('react');
 const ButtonStyle = require('./css_styles/ButtonStyle.js');
 
-import css from './css_styles/FlexBox.css';
-
 const headerButton = React.createClass({
 
   buttonIsClicked: function(){
