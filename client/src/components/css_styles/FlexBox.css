@@ -1,0 +1,16 @@
+.flexDiv {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flexComponent {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,8 @@
 const React = require('react');
 
-const HeaderButton = require('./HeaderButton.jsx')
+const HeaderButton = require('./HeaderButton.jsx');
+
+import css from './css_styles/FlexBox.css';
 
 const Header = React.createClass({
 
@@ -13,7 +15,7 @@ const Header = React.createClass({
     });
 
     return(
-      <div>
+      <div className="flexDiv">
         {headers}
       </div>
     );

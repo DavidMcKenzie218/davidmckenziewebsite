@@ -4,9 +4,11 @@ const Header = require('./Header.jsx');
 const Body = require('./Body.jsx');
 const HeaderButton = require('./HeaderButton.jsx');
 
+import css from './css_styles/FlexBox.css';
+
 const HomePage = React.createClass({
 
-  getInitialState: function(){    return {headers: [{id:1, title:'Home'}, {id:2, title:'Title 1'}, {id:3, title:'Title 2'}], body: [{para:"This is paragraph One"}, {para:"This is paragraph Two"}]};
+  getInitialState: function(){    return {headers: [{id:1, title:'Home'}, {id:2, title:'Title 1'}, {id:3, title:'Title 2'},{id:4, title:'Title 3'},{id:5, title:'Title 4'}], body: [{para:"This is paragraph One"}, {para:"This is paragraph Two"}]};
   },
 
   setBodyText: function(buttonId){
@@ -20,7 +22,7 @@ const HomePage = React.createClass({
 
   render: function(){
     return(
-      <div className = "HomePage">
+      <div className = "homePage">
         <Header data={this.state.headers} buttonPressed={this.setBodyText}/>
         <Body data={this.state.body}/>
       </div>
