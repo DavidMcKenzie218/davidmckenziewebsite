@@ -9,3 +9,5 @@ const TextParagraph = React.createClass({
   }
 
 })
+
+module.exports = TextParagraph;

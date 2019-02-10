@@ -7,3 +7,5 @@ const TextImage = React.createClass({
     )
   }
 })
+
+module.exports = TextImage;

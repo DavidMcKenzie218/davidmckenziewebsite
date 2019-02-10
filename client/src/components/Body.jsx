@@ -1,24 +1,27 @@
 const React = require('react');
 
+const TextHeader = require('./TextHeader.jsx');
+const TextParagraph = require('./TextParagraph.jsx');
+const TextImage = require('./TextImage.jsx');
+
 const Body = React.createClass({
 
-  createBody: function(){
-    let body = this.props.data.map(function(data){
-      
-    })
-  },
+  render: function(){ 
 
-  render: function(){
+  let body = this.props.data.map((content) => {
+    const component = (type) => ({
+      "header": <TextHeader textHeader={content.data.data}/>,
+      "text": <TextParagraph text={content.data.data}/>,
+      "image": <TextImage textImage={content.data.data}/>
+    })[type]
 
-    let paragraphs = this.props.data.map(function(paragraph){
-      return (
-        <p>{paragraph.para}</p>
-      );
-    })
+    return component("text");
+  }
+    )                                      
 
     return(
       <div>
-        {paragraphs}
+        {body}
       </div>
     );
   }

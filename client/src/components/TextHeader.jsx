@@ -9,3 +9,5 @@ const TextHeader = React.createClass({
   }
 
 })
+
+module.exports = TextHeader;

@@ -6,7 +6,7 @@ const HeaderButton = require('./HeaderButton.jsx');
 
 const HomePage = React.createClass({
 
-  getInitialState: function(){    return {headers: [{id:0, title: "loading"}], body: [{id:0, para:"Loading"}]};
+  getInitialState: function(){    return {headers: [{id:0, title: "loading"}], body: [{id:0, type: "text", data:"Loading"}]};
   },
 
   getApiData: function(){
@@ -26,9 +26,8 @@ const HomePage = React.createClass({
   setBodyText: function(buttonId){
     let bodyText = [];
     let data = this.websiteData.body;
-    console.log("setting button text");
     data.map((text) => {
-      if(text.id == buttonId) bodyText.push({para:text.para});
+      if(text.id == buttonId) bodyText.push({data:text});
     })
     this.setState({body:bodyText});
   },
