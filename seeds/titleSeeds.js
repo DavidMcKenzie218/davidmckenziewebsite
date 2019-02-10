@@ -5,17 +5,9 @@ let titleSeeds =
   },
   {
     id:2,
-    title:"Software Development"
+    title:"Work"
   },
   {
     id:3,
-    title:"Past Experience"
-  },
-  {
-    id:4,
-    title:"Game Development"
-  },
-  {
-    id:5,
-    title:"About Me"
+    title:"Projects"
   }]
