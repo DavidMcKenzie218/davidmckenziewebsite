@@ -15,9 +15,8 @@ const Body = React.createClass({
       "image": <TextImage textImage={content.data.data}/>
     })[type]
 
-    return component("text");
-  }
-    )                                      
+    return component(content.data.type);
+  })                                      
 
     return(
       <div>

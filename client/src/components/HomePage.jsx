@@ -27,7 +27,7 @@ const HomePage = React.createClass({
     let bodyText = [];
     let data = this.websiteData.body;
     data.map((text) => {
-      if(text.id == buttonId) bodyText.push({data:text});
+      if(text.pageId == buttonId) bodyText.push({data:text});
     })
     this.setState({body:bodyText});
   },
